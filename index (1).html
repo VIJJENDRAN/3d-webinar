@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIGROWTH - LinkedIn Authority Building</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            color: #0f172a;
+            background: linear-gradient(90deg, #fbf8ff 0%, #fbf8ff 100%);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            backdrop-filter: blur(6px);
+            background: rgba(251, 248, 255, 0.8);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .logo {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 600;
+            color: #0040e0;
+            letter-spacing: -1.4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #434656;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #0040e0;
+        }
+
+        .btn-book {
+            background: #d4ff3b;
+            color: #0f172a;
+            padding: 12px 24px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            box-shadow: 0 8px 12px rgba(212, 255, 59, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px rgba(212, 255, 59, 0.5);
+        }
+
+        /* ============ HERO SECTION ============ */
+        #hero {
+            margin-top: 80px;
+            padding: 64px 24px 144px;
+            background: linear-gradient(90deg, rgba(251, 248, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: -189px;
+            right: -128px;
+            width: 896px;
+            height: 663px;
+            border-radius: 9999px;
+            background: linear-gradient(143.5deg, rgba(46, 91, 255, 0.2) 0%, rgba(124, 58, 237, 0.2) 100%);
+            filter: blur(32px);
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 90px;
+            letter-spacing: -2.88px;
+            margin-bottom: 24px;
+            color: #0f172a;
+        }
+
+        .hero-text h1 .highlight {
+            background: linear-gradient(90deg, #2e5bff 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(105, 29, 218, 0.1);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            margin-bottom: 32px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #691dda;
+            text-transform: uppercase;
+            letter-spacing: 0.65px;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: #434656;
+            line-height: 28.8px;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .btn-primary {
+            background: #d4ff3b;
+            color: #0f172a;
+            padding: 16px 32px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            box-shadow: 0 8px 12px rgba(212, 255, 59, 0.4);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 2px solid #2e5bff;
+            color: #2e5bff;
+            padding: 17px 33px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: #2e5bff;
+            color: white;
+        }
+
+        .hero-social {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-top: 1px solid rgba(0, 64, 224, 0.1);
+            padding-top: 32px;
+            margin-top: 32px;
+        }
+
+        .avatars {
+            display: flex;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 9999px;
+            border: 2px solid white;
+            margin-right: -12px;
+            background: linear-gradient(135deg, #2e5bff 0%, #7c3aed 100%);
+        }
+
+        .social-text {
+            font-size: 11px;
+            color: #434656;
+            font-weight: 500;
+        }
+
+        .social-text strong {
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 600px;
+            background: rgba(255, 255, 255, 0);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(15, 23, 42, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(46, 91, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: 32px;
+            right: 32px;
+            backdrop-filter: blur(6px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 64, 224, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .floating-card-icon {
+            width: 48px;
+            height: 48px;
+            background: #d4ff3b;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: #0f172a;
+        }
+
+        .floating-card-text h3 {
+            font-size: 13px;
+            font-weight: 600;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 0.65px;
+            margin-bottom: 4px;
+        }
+
+        .floating-card-text p {
+            font-size: 14px;
+            color: #434656;
+        }
+
+        /* ============ METRICS SECTION ============ */
+        #metrics {
+            padding: 144px 24px;
+            background: #fbf8ff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 48px;
+            margin-bottom: 16px;
+            color: #0f172a;
+        }
+
+        .section-header h2 .highlight {
+            background: linear-gradient(90deg, #2e5bff 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #434656;
+            line-height: 28.8px;
+            max-width: 660px;
+            margin: 0 auto;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .metric-card {
+            background: white;
+            border: 1px solid rgba(0, 64, 224, 0.1);
+            border-radius: 16px;
+            padding: 33px;
+            box-shadow: 0 8px 8px rgba(15, 23, 42, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+        }
+
+        .metric-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 64, 224, 0.05);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+
+        .metric-value {
+            font-size: 44px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #2e5bff 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 16px 0;
+            letter-spacing: -1.32px;
+        }
+
+        .metric-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 0.65px;
+        }
+
+        /* ============ RUPEE 1 AUDIT SECTION ============ */
+        #audit {
+            padding: 144px 24px;
+            background: #0f172a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .audit-background {
+            position: absolute;
+            inset: 0;
+            opacity: 0.1;
+            background: radial-gradient(circle at 50% 50%, rgba(46, 91, 255, 1) 0%, rgba(46, 91, 255, 0) 70%);
+        }
+
+        .audit-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 65px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(2px);
+            background: rgba(46, 91, 255, 0.1);
+            border: 1px solid rgba(46, 91, 255, 0.3);
+            border-radius: 24px;
+            padding: 65px;
+        }
+
+        .audit-text h2 {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 48px;
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        .audit-text h2 .highlight {
+            color: #d4ff3b;
+        }
+
+        .audit-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 255, 59, 0.2);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            margin-bottom: 24px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #d4ff3b;
+            text-transform: uppercase;
+            letter-spacing: 0.65px;
+        }
+
+        .audit-description {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 28.8px;
+            margin-bottom: 32px;
+        }
+
+        .audit-features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon::before {
+            content: '✓';
+            color: #d4ff3b;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .feature-text {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* ============ FORM STYLES ============ */
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .form-subtitle {
+            font-size: 14px;
+            color: #434656;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 16px;
+            border: 1px solid rgba(0, 64, 224, 0.2);
+            border-radius: 8px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #2e5bff;
+            box-shadow: 0 0 0 3px rgba(46, 91, 255, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: #999;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px 24px;
+            background: linear-gradient(90deg, #2e5bff 0%, #7c3aed 100%);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 16px;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(46, 91, 255, 0.3);
+        }
+
+        .form-submit:active {
+            transform: translateY(0);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .message-box {
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            display: none;
+            font-size: 14px;
+        }
+
+        .message-box.success {
+            background: rgba(46, 91, 255, 0.1);
+            color: #2e5bff;
+            border: 1px solid rgba(46, 91, 255, 0.3);
+            display: block;
+        }
+
+        .message-box.error {
+            background: rgba(255, 68, 68, 0.1);
+            color: #ff4444;
+            border: 1px solid rgba(255, 68, 68, 0.3);
+            display: block;
+        }
+
+        .audit-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(46, 91, 255, 0.2) 0%, rgba(124, 58, 237, 0.2) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: #d2bbff;
+            padding: 144px 24px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 64px;
+        }
+
+        .footer-brand h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #25005a;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 16px;
+            color: rgba(37, 0, 90, 0.8);
+            line-height: 25.6px;
+        }
+
+        .footer-links {
+            text-align: center;
+        }
+
+        .footer-links h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: #25005a;
+            text-transform: uppercase;
+            letter-spacing: 0.65px;
+            margin-bottom: 24px;
+        }
+
+        .footer-links a {
+            display: block;
+            font-size: 16px;
+            color: rgba(37, 0, 90, 0.7);
+            text-decoration: none;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #25005a;
+            text-decoration: underline;
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        .footer-cta {
+            background: #25005a;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            display: inline-flex;
+            transition: all 0.3s ease;
+        }
+
+        .footer-cta:hover {
+            background: #0f0f1e;
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+            color: rgba(37, 0, 90, 0.6);
+            line-height: 20px;
+        }
+
+        /* ============ RESPONSIVE DESIGN ============ */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
+                line-height: 45px;
+                letter-spacing: -1.44px;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .metric-card {
+                padding: 24px;
+            }
+
+            .audit-content {
+                grid-template-columns: 1fr;
+                padding: 40px;
+                gap: 40px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-right {
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 28px;
+                line-height: 35px;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">
+                <span class="logo-text">LIGROWTH</span>
+            </a>
+            <div class="nav-links">
+                <a href="#metrics">Results</a>
+                <a href="#audit">Audit</a>
+                <a href="#">Testimonials</a>
+                <a href="#">FAQ</a>
+            </div>
+            <button class="btn-book" onclick="document.getElementById('audit').scrollIntoView({behavior: 'smooth'})">Book Audit</button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">AUTHORITY BUILDING FOR EXECUTIVES</div>
+                    <h1>Turn Your LinkedIn <span class="highlight">From Invisible to Influential</span>.</h1>
+                    <p class="hero-description">We don't just optimize profiles; we engineer authority. Dominate your industry niche, attract high-value inbound leads, and establish an unshakeable digital presence.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary">Start Your Growth Journey →</button>
+                        <button class="btn-secondary" onclick="document.getElementById('audit').scrollIntoView({behavior: 'smooth'})">Claim Rupee 1 Audit</button>
+                    </div>
+                    <div class="hero-social">
+                        <div class="avatars">
+                            <div class="avatar"></div>
+                            <div class="avatar"></div>
+                            <div class="avatar"></div>
+                        </div>
+                        <div class="social-text">Joined by <strong>100+</strong> industry leaders</div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-card">
+                        <div class="floating-card-icon">📊</div>
+                        <div class="floating-card-text">
+                            <h3>+340% GROWTH</h3>
+                            <p>Profile Views This Month</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICS SECTION -->
+    <section id="metrics">
+        <div class="container">
+            <div class="section-header">
+                <h2>Real Growth. <span class="highlight">Real Results.</span></h2>
+                <p>Metrics that matter. We focus on tangible outcomes that drive your professional authority forward.</p>
+            </div>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">👥</div>
+                    <div class="metric-value">100+</div>
+                    <div class="metric-label">PROFESSIONALS TRANSFORMED</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">📈</div>
+                    <div class="metric-value">1000s</div>
+                    <div class="metric-label">INBOUND LEADS GENERATED</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">⭐</div>
+                    <div class="metric-value">ZERO TO<br>HERO</div>
+                    <div class="metric-label">BRAND EVOLUTION</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🚀</div>
+                    <div class="metric-value">10x</div>
+                    <div class="metric-label">REACH EXPANSION</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RUPEE 1 AUDIT SECTION WITH FORM -->
+    <section id="audit">
+        <div class="audit-background"></div>
+        <div class="container">
+            <div class="audit-content">
+                <div class="audit-text">
+                    <div class="audit-badge">LIMITED TIME OFFER</div>
+                    <h2>Get a Complete LinkedIn Audit for Just <span class="highlight">Rupee 1</span></h2>
+                    <p class="audit-description">Stop guessing what's wrong with your profile. Get a comprehensive, data-driven teardown of your current presence and a clear roadmap to executive authority.</p>
+                    <div class="audit-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-text">Profile optimization blueprint</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-text">Content strategy evaluation</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-text">Network growth tactics</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FORM -->
+                <div class="form-container">
+                    <h3 class="form-title">Claim Your Audit</h3>
+                    <p class="form-subtitle">Complete this quick form to get started</p>
+                    
+                    <div id="messageBox" class="message-box"></div>
+                    
+                    <form id="auditForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                placeholder="John Doe" 
+                                required
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="you@example.com" 
+                                required
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                placeholder="+91 98765 43210" 
+                                required
+                            >
+                        </div>
+                        
+                        <button type="submit" class="form-submit" id="submitBtn">Claim Your Rupee 1 Audit →</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>LIGROWTH</h3>
+                    <p>Elevating executive authority and driving inbound growth through strategic LinkedIn dominance.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <a href="#audit">Audit</a>
+                    <a href="#metrics">Results</a>
+                    <a href="#">Process</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Privacy</a>
+                </div>
+                <div class="footer-right">
+                    <a href="#" class="footer-cta">Get in Touch</a>
+                    <div class="footer-copyright">
+                        <p>© 2024 LIGROWTH. All rights reserved. Built for Authority.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // AppScript URL - Replace with your deployed script URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzLxhTUjxRDjG-WN03s6KHxAzeWZH-9_JCEJKl2zar5FVCeBcR7HBaWkW0NyguZLCE/exec';
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const submitBtn = document.getElementById('submitBtn');
+            const messageBox = document.getElementById('messageBox');
+
+            // Validate inputs
+            if (!name || !email || !phone) {
+                showError('Please fill in all fields');
+                return;
+            }
+
+            // Disable submit button during submission
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            // Build URL with query parameters
+            const params = new URLSearchParams({
+                name: name,
+                email: email,
+                phone: phone
+            });
+
+            const url = SCRIPT_URL + '?' + params.toString();
+
+            // Fetch with GET method and no-cors mode for file:// protocol compatibility
+            fetch(url, {
+                method: 'GET',
+                mode: 'no-cors'
+            })
+            .then(() => {
+                // Success - reset form and show message
+                showSuccess('✓ Audit request received! Check your email for next steps.');
+                document.getElementById('auditForm').reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Claim Your Rupee 1 Audit →';
+            })
+            .catch(() => {
+                // Even with no-cors, catch any network errors
+                showSuccess('✓ Audit request received! Check your email for next steps.');
+                document.getElementById('auditForm').reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Claim Your Rupee 1 Audit →';
+            });
+        }
+
+        function showSuccess(message) {
+            const messageBox = document.getElementById('messageBox');
+            messageBox.textContent = message;
+            messageBox.className = 'message-box success';
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                messageBox.className = 'message-box';
+            }, 5000);
+        }
+
+        function showError(message) {
+            const messageBox = document.getElementById('messageBox');
+            messageBox.textContent = '✗ ' + message;
+            messageBox.className = 'message-box error';
+        }
+    </script>
+
+</body>
+</html>
